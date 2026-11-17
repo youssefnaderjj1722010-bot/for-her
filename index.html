@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2a060d" />
+  <title>إلى جانا | Jana ♥</title>
+
+  <!-- Fonts: Great Vibes for the name, Aref Ruqaa and Cairo for Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Floating petals and hearts canvas -->
+  <canvas id="heart-canvas" aria-hidden="true"></canvas>
+
+  <main class="page">
+    <!-- Page header -->
+    <header class="page-top">
+      <p class="top-eyebrow">رسالة من القلب</p>
+      <p class="top-name">Jana <span class="top-heart" aria-hidden="true">♥</span></p>
+    </header>
+
+    <!-- Envelope view -->
+    <section class="envelope-stage" id="envelope-stage">
+      <div class="envelope" id="envelope" title="اضغطي لفتح الرسالة" role="button" tabindex="0" aria-label="افتحي الرسالة">
+        <div class="env-back"></div>
+        <div class="env-letter">
+          <span class="env-letter-line"></span>
+          <span class="env-letter-line short"></span>
+        </div>
+        <div class="env-pocket"></div>
+        <div class="env-flap"></div>
+        <div class="env-seal" aria-hidden="true">♥</div>
+        <span class="env-name" aria-hidden="true">Jana</span>
+      </div>
+
+      <h1 class="invite-title">رسالة خاصة لجانا</h1>
+      <p class="invite-text">فيها كلام من القلب… مستنية تتفتح بس.</p>
+      <button class="btn btn-primary" id="open-button" type="button">افتحي الرسالة ♥</button>
+      <p class="hint">في مفاجأة قلوب صغيرة بعد الفتح</p>
+    </section>
+
+    <!-- Letter view (revealed after opening) -->
+    <section class="letter-stage" id="letter-stage" hidden>
+      <article class="letter-card">
+        <!-- Decorative roses -->
+        <svg class="rose rose-top" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="40" fill="#9c1128" />
+          <path d="M50 14c20 0 36 16 36 36S70 86 50 86 14 70 14 50 30 14 50 14z" fill="#b3182f" />
+          <path d="M50 26c13 0 24 11 24 24S63 74 50 74 26 63 26 50s11-24 24-24z" fill="#cf2440" />
+          <path d="M50 36c8 0 14 6 14 14s-6 14-14 14-14-6-14-14 6-14 14-14z" fill="#a01026" />
+          <path d="M50 44c3.5 0 6 2.5 6 6s-2.5 6-6 6-6-2.5-6-6 2.5-6 6-6z" fill="#f3c2c9" opacity=".7" />
+        </svg>
+        <svg class="rose rose-bottom" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="40" fill="#8c0e22" />
+          <path d="M50 14c20 0 36 16 36 36S70 86 50 86 14 70 14 50 30 14 50 14z" fill="#a8142b" />
+          <path d="M50 26c13 0 24 11 24 24S63 74 50 74 26 63 26 50s11-24 24-24z" fill="#c21f38" />
+          <path d="M50 36c8 0 14 6 14 14s-6 14-14 14-14-6-14-14 6-14 14-14z" fill="#8f0f22" />
+          <path d="M50 44c3.5 0 6 2.5 6 6s-2.5 6-6 6-6-2.5-6-6 2.5-6 6-6z" fill="#f3c2c9" opacity=".65" />
+        </svg>
+
+        <p class="letter-kicker">إلى</p>
+        <h1 class="letter-name">
+          <span class="letter-name-en">Jana</span>
+          <span class="letter-name-ar">جانا</span>
+        </h1>
+        <p class="letter-tagline">أجمل اسم في الدنيا</p>
+        <div class="letter-divider" aria-hidden="true"><span>♥</span></div>
+
+        <div class="letter-body">
+          <p class="letter-greeting">يا جانا،</p>
+          <p>لو حاولت أوصفك، مش هعرف ألاقي كلام يوفيكي حقك. ضحكتك بتقلّب يومي، وقلبك الطيب بيخلّي الدنيا كلها أحلى.</p>
+          <p>معاكي كل حاجة بتبقى أجمل، وأنا مبسوط ومطمن إنك في حياتي. أيامي كلها بتستنى لحظة أشوفك فيها.</p>
+          <p>يارب تكون أيامك كلها فرح وضحك وراحة بال، وتفضلي دايمًا مبسوطة ومنوّرة المكان زي ما أنتِ.</p>
+          <p class="letter-last">بحبك من كل قلبي… ودايمًا هختارك.</p>
+        </div>
+
+        <p class="letter-signature">دايمًا معاك،<br /><span class="signature-name">من كل قلبي ♥</span></p>
+
+        <div class="letter-actions">
+          <button class="btn btn-love" id="hearts-button" type="button">ابعتيلي حب ♥</button>
+          <button class="btn btn-soft" id="music-button" type="button" aria-pressed="false">شغّلي الموسيقى ♪</button>
+        </div>
+      </article>
+
+      <p class="happy-line">Happy always, Jana ♥</p>
+    </section>
+
+    <footer class="page-footer">صُنعت بكل الحب… عشان جانا</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
